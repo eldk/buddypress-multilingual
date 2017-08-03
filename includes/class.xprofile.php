@@ -156,12 +156,12 @@ class BPML_XProfile
 
     public function t_name( $name ) {
         global $field;
-        return wp_unslash(apply_filters( 'wpml_translate_single_string', $name, $this->_context, "{$this->_field_string_prefix}{$field->id} name" ));
+        return apply_filters( 'wpml_translate_single_string', $name, $this->_context, "{$this->_field_string_prefix}{$field->id} name" );
     }
 
     public function t_description( $description ) {
         global $field;
-        return wp_unslash(apply_filters( 'wpml_translate_single_string', $description, $this->_context, "{$this->_field_string_prefix}{$field->id} description" ));
+        return apply_filters( 'wpml_translate_single_string', $description, $this->_context, "{$this->_field_string_prefix}{$field->id} description" );
     }
 
     public function t_options( $options ) {
