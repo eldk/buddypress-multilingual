@@ -178,8 +178,8 @@ class BPML_XProfile
 
     protected function _t_option_name( $option, $field_id ) {
         if ( !empty( $option->name ) ) {
-            return apply_filters( 'wpml_translate_single_string', $option->name, $this->_context,
-                    $this->sanitize_option_basename( $option, $field_id ) . ' name' );
+            return wp_unslash(apply_filters( 'wpml_translate_single_string', $option->name, $this->_context,
+                    $this->sanitize_option_basename( $option, $field_id ) . ' name' ));
         }
         return isset( $option->name ) ? $option->name : '';
     }
